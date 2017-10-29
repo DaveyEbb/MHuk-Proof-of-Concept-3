@@ -15,8 +15,15 @@ import { LogoutComponent } from "./auth/logout.component";
 import { SignupComponent } from "./auth/signup.component";
 import { SigninComponent } from "./auth/signin.component";
 import { AuthService } from "./auth/auth.service";
+
 import { ErrorComponent } from "./errors/error.component";
 import { ErrorService } from "./errors/error.service";
+
+import { LoadComponent } from "./emisdata/load.component";
+import { ViewComponent } from "./emisdata/view.component";
+import { EmisdataComponent } from "./emisdata/emisdata.component";
+import { EmisdataService } from "./emisdata/emisdata.service";
+
 
 @NgModule({
     declarations: [
@@ -30,7 +37,10 @@ import { ErrorService } from "./errors/error.service";
         LogoutComponent,
         SignupComponent,
         SigninComponent,
-        ErrorComponent
+        ErrorComponent,
+        LoadComponent,
+        ViewComponent,
+        EmisdataComponent
     ],
     imports: [
         BrowserModule,
@@ -39,7 +49,7 @@ import { ErrorService } from "./errors/error.service";
         ReactiveFormsModule,
         HttpModule
     ],
-    providers: [AuthService, ErrorService],
+    providers: [AuthService, ErrorService, EmisdataService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
