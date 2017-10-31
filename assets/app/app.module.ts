@@ -23,6 +23,7 @@ import { LoadComponent } from "./emisdata/load.component";
 import { ViewComponent } from "./emisdata/view.component";
 import { EmisdataComponent } from "./emisdata/emisdata.component";
 import { EmisdataService } from "./emisdata/emisdata.service";
+import { InvestigationComponent } from "./emisdata/investigation.component";
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { EmisdataService } from "./emisdata/emisdata.service";
         ErrorComponent,
         LoadComponent,
         ViewComponent,
-        EmisdataComponent
+        EmisdataComponent,
+        InvestigationComponent
     ],
     imports: [
         BrowserModule,

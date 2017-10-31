@@ -12,6 +12,62 @@ import { Emisdata } from "./emisdata.model";
 export class LoadComponent {
     myForm: FormGroup;
 
+  changeListener($event) : void {
+    this.readThis($event.target);
+    }
+
+  readThis(inputValue: any) : void {
+    var file:File = inputValue.files[0]; 
+    var myReader:FileReader = new FileReader();
+
+    myReader.onloadend = function(e){
+      // you can perform an action with readed data here
+
+      var results = JSON.parse(myReader.result);
+      
+      
+      console.log(results);
+
+
+
+      //console.log(myReader.result);
+    }
+
+    myReader.readAsText(file);
+  }
+
+// function readSingleFile(e) {
+//   var file = e.target.files[0];
+//   if (!file) {
+//     return;
+//   }
+//   var reader = new FileReader();
+//   reader.onload = function(e) {
+//     var contents = e.target.result;
+//     displayContents(contents);
+//     //
+//     obj = JSON.parse(contents);
+//     console.log(obj);
+//     document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+//     //
+//   };
+//   reader.readAsText(file);
+// }
+
+// function displayContents(contents) {
+//   var element = document.getElementById('file-content');
+//   element.textContent = contents;
+// }
+
+// var obj = {};
+
+//  document.getElementById('file-input')
+//    .addEventListener('change', readSingleFile, false);
+
+
+
+// 
+
     // constructor(private authService: AuthService, private router: Router) {}
 
     // onSubmit() {

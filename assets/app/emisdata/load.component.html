@@ -1,5 +1,20 @@
 <div class="col-md-8 col-md-offset-2">
-    Load Component
+    <br>
+    <br>
+
+    <!--<input type="file" id="file-input" />
+    <p id="demo"></p>
+    <h3>Contents of the file:</h3>
+    <pre id="file-content"></pre>-->
+
+    <div>
+      Click the button to select the file which you have previously downloaded to your 
+      computer from the EMS portal:
+      <br><br><br>
+      <input type="file" (change)="changeListener($event)">
+    </div>
+
+
     <!--<form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="form-group">
             <label for="content">Content</label>
