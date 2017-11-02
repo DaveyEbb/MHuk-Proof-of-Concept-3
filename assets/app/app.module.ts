@@ -24,7 +24,9 @@ import { ViewComponent } from "./emisdata/view.component";
 import { EmisdataComponent } from "./emisdata/emisdata.component";
 import { EmisdataService } from "./emisdata/emisdata.service";
 import { InvestigationComponent } from "./emisdata/investigation.component";
-
+import { ChartComponent } from "./emisdata/chart.component";
+import { RiskComponent } from "./emisdata/risk.component";
+import { ResultListComponent } from "./emisdata/result-list.component";
 
 @NgModule({
     declarations: [
@@ -42,7 +44,10 @@ import { InvestigationComponent } from "./emisdata/investigation.component";
         LoadComponent,
         ViewComponent,
         EmisdataComponent,
-        InvestigationComponent
+        InvestigationComponent,
+        ChartComponent,
+        RiskComponent,
+        ResultListComponent
     ],
     imports: [
         BrowserModule,

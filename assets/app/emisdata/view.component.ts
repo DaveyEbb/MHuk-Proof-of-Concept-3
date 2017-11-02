@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { Emisdata } from "./emisdata.model";
+import { Investigation } from "./investigation.model";
 //import { AuthService } from "./auth.service";
 
 @Component({

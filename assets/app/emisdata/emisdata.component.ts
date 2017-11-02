@@ -9,6 +9,8 @@ import { EmisdataService } from "./emisdata.service";
                 <ul class="nav nav-tabs">
                     <li routerLinkActive="active"><a [routerLink]="['load']">Load Data</a></li>
                     <li routerLinkActive="active"><a [routerLink]="['view']">View Data</a></li>
+                    <li routerLinkActive="active"><a [routerLink]="['chart']">View Chart</a></li>
+                    <li routerLinkActive="active"><a [routerLink]="['risk']">Risk Profile</a></li>
                 </ul>
             </nav>
         </header>

@@ -1,18 +1,22 @@
 <div class="col-md-8 col-md-offset-2">
     <br>
     <br>
-
     <!--<input type="file" id="file-input" />
     <p id="demo"></p>
     <h3>Contents of the file:</h3>
     <pre id="file-content"></pre>-->
-
     <div>
       Click the button to select the file which you have previously downloaded to your 
-      computer from the EMS portal:
+      computer from the EMIS portal:
       <br><br><br>
       <input type="file" (change)="changeListener($event)">
     </div>
+
+        <!--Date Created: {{TestResults.Created}}-->
+        <!--<li *ngFor="let TestResults of results">
+            Date Created: {{TestResults.Created}}
+        </li>-->
+</div>
 
 
     <!--<form (ngSubmit)="onSubmit(f)" #f="ngForm">
@@ -29,4 +33,3 @@
         <button type="button" class="btn btn-danger" (click)="onClear(f)">Clear</button>
         <button class="btn btn-primary" type="submit">Save</button>
     </form>-->
-</div>
