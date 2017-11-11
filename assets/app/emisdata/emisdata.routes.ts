@@ -6,10 +6,9 @@ import { ChartComponent } from "./chart.component";
 import { RiskComponent } from "./risk.component";
 
 export const EMISDATA_ROUTES: Routes = [
-    { path: '', redirectTo: 'view', pathMatch: 'full' },
+    { path: '', redirectTo: 'load', pathMatch: 'full' },
     { path: 'load', component: LoadComponent },
-    { path: 'view', component: ViewComponent },
     { path: 'chart', component: ChartComponent },
-    { path: 'risk', component: RiskComponent }
-    
+    { path: 'risk', component: RiskComponent },
+    { path: 'view', component: ViewComponent }
 ];

@@ -1,35 +1,18 @@
 <div class="col-md-8 col-md-offset-2">
     <br>
     <br>
-    <!--<input type="file" id="file-input" />
-    <p id="demo"></p>
-    <h3>Contents of the file:</h3>
-    <pre id="file-content"></pre>-->
     <div>
       Click the button to select the file which you have previously downloaded to your 
       computer from the EMIS portal:
       <br><br><br>
       <input type="file" (change)="changeListener($event)">
+      <br><br>
+      <!--<button (click)="newMessage()">New Message</button>
+      <br>-->
+
+      <pre> {{ filestring | json }} </pre>
+
+
+      <!--<app-bloodtest-list></app-bloodtest-list>-->
     </div>
-
-        <!--Date Created: {{TestResults.Created}}-->
-        <!--<li *ngFor="let TestResults of results">
-            Date Created: {{TestResults.Created}}
-        </li>-->
 </div>
-
-
-    <!--<form (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <div class="form-group">
-            <label for="content">Content</label>
-            <input
-                    type="text"
-                    id="content"
-                    class="form-control"
-                    [ngModel]="message?.content"
-                    name="content"
-                    required>
-        </div>
-        <button type="button" class="btn btn-danger" (click)="onClear(f)">Clear</button>
-        <button class="btn btn-primary" type="submit">Save</button>
-    </form>-->

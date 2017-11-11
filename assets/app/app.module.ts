@@ -27,6 +27,9 @@ import { InvestigationComponent } from "./emisdata/investigation.component";
 import { ChartComponent } from "./emisdata/chart.component";
 import { RiskComponent } from "./emisdata/risk.component";
 import { ResultListComponent } from "./emisdata/result-list.component";
+import { BloodtestListComponent } from "./emisdata/bloodtest-list.component";
+import { BloodtestService } from "./emisdata/bloodtest.service";
+
 
 @NgModule({
     declarations: [
@@ -47,7 +50,8 @@ import { ResultListComponent } from "./emisdata/result-list.component";
         InvestigationComponent,
         ChartComponent,
         RiskComponent,
-        ResultListComponent
+        ResultListComponent,
+        BloodtestListComponent
     ],
     imports: [
         BrowserModule,
@@ -56,7 +60,7 @@ import { ResultListComponent } from "./emisdata/result-list.component";
         ReactiveFormsModule,
         HttpModule
     ],
-    providers: [AuthService, ErrorService, EmisdataService],
+    providers: [AuthService, ErrorService, EmisdataService, BloodtestService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
