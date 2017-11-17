@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 import { Bloodtest } from "./bloodtest.model";
 import { BloodtestService } from "./bloodtest.service";
@@ -9,21 +9,15 @@ import { BloodtestService } from "./bloodtest.service";
 })
 export class BloodtestComponent {
     @Input() bloodtest: Bloodtest;
+    @Output() editClicked = new EventEmitter<string>();
 
     constructor(private bloodtestService: BloodtestService) {}
 
-    // onEdit() {
-    //     this.messageService.editMessage(this.message);
-    // }
+    onEdit() {
+        this.editClicked.emit('A new value');
+    }
 
-    // onDelete() {
-    //     this.messageService.deleteMessage(this.message)
-    //         .subscribe(
-    //             result => console.log(result)
-    //         );
-    // }
-
-    // belongsToUser() {
-    //     return localStorage.getItem('userId') == this.message.userId;
-    // }
+    onDelete() {
+        this.bloodtestService.deleteBloodtest(this.bloodtest)
+    }
 }

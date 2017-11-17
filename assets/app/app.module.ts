@@ -29,7 +29,10 @@ import { RiskComponent } from "./emisdata/risk.component";
 import { ResultListComponent } from "./emisdata/result-list.component";
 import { BloodtestListComponent } from "./emisdata/bloodtest-list.component";
 import { BloodtestService } from "./emisdata/bloodtest.service";
-
+import { BloodtestsComponent } from "./emisdata/bloodtests.component";
+import { BloodtestInputComponent } from "./emisdata/bloodtest-input.component";
+import { ViewHeadComponent } from "./emisdata/view-head.component";
+import { BloodtestComponent } from "./emisdata/bloodtest.component";
 
 @NgModule({
     declarations: [
@@ -51,7 +54,11 @@ import { BloodtestService } from "./emisdata/bloodtest.service";
         ChartComponent,
         RiskComponent,
         ResultListComponent,
-        BloodtestListComponent
+        BloodtestListComponent,
+        BloodtestsComponent,
+        BloodtestInputComponent,
+        ViewHeadComponent,
+        BloodtestComponent
     ],
     imports: [
         BrowserModule,

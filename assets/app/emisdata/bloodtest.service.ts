@@ -7,21 +7,22 @@ import { Bloodtest } from "./bloodtest.model";
 
 @Injectable()
 export class BloodtestService {
+  private bloodtests: Bloodtest[] = [];
  
  constructor() { }
  
-  public count = 0;
- 
-  get() {
-    return this.count;
+  addBloodtest(bloodtest: Bloodtest) {
+    this.bloodtests.push(bloodtest); 
+    console.log("Bloodtest Service !!!!!");
+    console.log(this.bloodtests);
   }
  
-  increment() {
-    this.count++;  
+  getBloodtests() {
+    return this.bloodtests;
   }
-  
-  decrement() {
-    this.count--;
+ 
+  deleteBloodtest(bloodtest: Bloodtest) {
+    this.bloodtests.splice(this.bloodtests.indexOf(bloodtest), 1);  
   }
   
 }

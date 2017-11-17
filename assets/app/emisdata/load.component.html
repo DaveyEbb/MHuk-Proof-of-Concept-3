@@ -6,13 +6,14 @@
       computer from the EMIS portal:
       <br><br><br>
       <input type="file" (change)="changeListener($event)">
-      <br><br>
-      <!--<button (click)="newMessage()">New Message</button>
-      <br>-->
-
-      <pre> {{ filestring | json }} </pre>
-
-
-      <!--<app-bloodtest-list></app-bloodtest-list>-->
+      <br><br><button (click)="onSubmit()">Display Data to console</button><br><br>
+      <div *ngIf="filestring">
+        <br><br><h4>Blood test details loaded:</h4>
+        <div *ngFor="let bloodtest of filestring">
+            <p> Created on: {{ bloodtest.Created }} <p>
+        </div>
+        <br><br>Full contents of chosen file (JSON format):<br><br>
+        <pre> {{ filestring | json }} </pre>
+      </div>
     </div>
 </div>

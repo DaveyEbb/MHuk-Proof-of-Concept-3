@@ -8,20 +8,17 @@ import { BloodtestService } from "./bloodtest.service";
 
 @Component({
     selector: 'app-load',
-    providers: [BloodtestService],
     templateUrl: './load.component.html',
+    providers: [BloodtestService]
 })
 export class LoadComponent {
  
  message: string;
  public filestring;
+ public flatBloodtest = [];
 
- constructor(private countService: BloodtestService) {
+ constructor(private bloodtestService: BloodtestService) {
  }
-
-  getCount() {
-    return this.countService.get();
-  }
   
   changeListener($event) : void {
     this.readThis($event.target);
@@ -31,7 +28,59 @@ export class LoadComponent {
     console.log("**********");
     console.log(this.filestring);
     //this.bloodtestService.sendMessage("Message from Load component to View component");
-  }
+    //console.log(">>>>>");
+    //console.log(this.flatBloodtest);
+    var i, j;
+    for (i=0; i<this.filestring.length; i++) {
+          var bloodtestLine = {
+            created: "",
+            totalCholesterol: "",
+            Hdl: "",
+            Ldl: "",
+            Triglycerides: "",
+            HdlRatio: ""
+            };
+          console.log(this.filestring[i].Created);
+          bloodtestLine.created = this.filestring[i].Created;
+          console.log(">> " + i);
+          //console.log(bloodtestLine);
+           for (j=0; j<this.filestring[i].TestResultLines.length; j++) {
+             //console.log(this.filestring[i].TestResultLines[j].Result);
+             switch(this.filestring[i].TestResultLines[j].Description) {
+                case "Serum cholesterol": 
+                  bloodtestLine.totalCholesterol = this.filestring[i].TestResultLines[j].Result;
+                  //console.log("Serum cholesterol: " + this.filestring[i].TestResultLines[j].Result);
+                  break;
+                case "Serum triglycerides":
+                  bloodtestLine.Triglycerides = this.filestring[i].TestResultLines[j].Result;
+                  //console.log("Serum triglycerides: " + this.filestring[i].TestResultLines[j].Result);
+                  break;
+                case "Serum HDL cholesterol level":
+                  bloodtestLine.Hdl = this.filestring[i].TestResultLines[j].Result;
+                  //console.log("Serum HDL cholesterol level: " + this.filestring[i].TestResultLines[j].Result);
+                  break;
+                case "Calculated LDL cholesterol lev":
+                  bloodtestLine.Ldl = this.filestring[i].TestResultLines[j].Result;
+                  //console.log("Calculated LDL cholesterol lev: " + this.filestring[i].TestResultLines[j].Result);
+                  break;
+                case "Serum cholesterol/HDL ratio":
+                  bloodtestLine.HdlRatio = this.filestring[i].TestResultLines[j].Result;
+                  //console.log("Serum cholesterol/HDL ratio: " + this.filestring[i].TestResultLines[j].Result);
+                  break;
+             }
+           };
+           console.log("** bloodtestLine: " + bloodtestLine);
+           this.flatBloodtest.push(bloodtestLine);
+           this.bloodtestService.addBloodtest(bloodtestLine);
+        //console.log(this.flatBloodtest);
+        };
+    //console.log("this.flatBloodlist");
+    //console.log(this.flatBloodtest);
+    //var bloodtest: Bloodtest;
+    //bloodtest.created = this.flatBloodtest[0].created;
+    //const bloodtest = new Bloodtest();
+    //this.bloodtestService.addBloodtest(bloodtest);      
+    }
 
   readThis(inputValue: any) : void {
     var file:File = inputValue.files[0]; 
@@ -59,16 +108,8 @@ export class LoadComponent {
     console.log("Load line 60:")
     console.log(this.filestring);
     }
+
     myReader.readAsText(file);
      }
-
-    //  newMessage() {
-    //     console.log("newMessage()");
-    //     this.data.changeMessage("Hello from Load Component");
-    // }
-
-    // ngOnInit() {
-    //   this.data.currentMessage.subscribe(message => this.message = message)
-    // }
 
 }

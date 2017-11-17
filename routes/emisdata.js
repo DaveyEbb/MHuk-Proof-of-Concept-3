@@ -3,7 +3,7 @@ var router = express.Router();
 var jwt = require('jsonwebtoken');
 
 var User = require('../models/user');
-var Emisdata = require('../models/investigation');
+var Emisdata = require('../models/bloodtest');
 
 // router.get('/', function (req, res, next) {
 //     Message.find()

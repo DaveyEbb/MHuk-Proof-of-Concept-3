@@ -1,20 +1,17 @@
-import { Component, OnInit, Input, OnDestroy } from "@angular/core";
-import { Router } from "@angular/router";
-import { Observable } from 'rxjs';
-import { Subscription } from "rxjs/Subscription";
-//import { Bloodtest } from "./bloodtest.model";
-import { BloodtestService } from "./bloodtest.service";
+import { Component } from "@angular/core";
 
 @Component({
-    selector: 'app-load',
-    templateUrl: './view.component.html' 
+    selector: 'app-view',
+    template: `
+      <div class="row">
+        <app-bloodtest-input></app-bloodtest-input>
+      </div>
+      <hr>
+      <div class="row">
+        <app-bloodtest-list></app-bloodtest-list>
+      </div>
+    `
 })
 export class ViewComponent {
     
-  constructor(private countService: BloodtestService) { 
-  }
-
-    getCount() {    
-        return this.countService.get();
-  }
 }
