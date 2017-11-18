@@ -5,8 +5,8 @@ import { BloodtestService } from "./bloodtest.service";
 
 @Component({
     selector: 'app-view-head',
-    templateUrl: 'view-head.component.html',
-    providers: [BloodtestService]
+    templateUrl: 'view-head.component.html'
+    //providers: [BloodtestService]
 })
 export class ViewHeadComponent {
     @Input() bloodtest: Bloodtest;
